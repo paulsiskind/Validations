@@ -1,0 +1,36 @@
+extends ../layout
+
+block content
+
+
+
+  .container
+   br
+   h1.well Sign Up
+   br
+   br
+   if errors
+     .alert.alert-danger
+      
+      for error in errors
+       p= error
+
+   form(action='/signup', method="post")
+     .col-md-6
+      .form-group
+        label Email
+        input.form-control(type="text" name="email")
+        br
+
+      .form-group
+        label Password
+        input.form-control(type="password" name="password")
+        br
+
+      .form-group
+        label Password Confirmation
+        input.form-control(type="password" name="passwordB")
+
+           
+      Button(type="submit" class="btn btn-success") Create
+      
